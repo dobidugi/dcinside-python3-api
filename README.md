@@ -1,4 +1,6 @@
 ﻿# dcinside-python3api
+ # 아직 개발중
+ 
 ##### dcinside python3 전용 비공식 API 입니다.
 
 # 사용법
