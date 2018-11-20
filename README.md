@@ -7,6 +7,12 @@
 import dcapi
 ```
 
+#### dcapi.write.post(gall_name,usid,password,title,content)
+```python
+#비로그인(유동) 상태에서 글을 작성할수있습니다.
+dcapi.write.post("programming","nick","password","subject","content")
+#리턴값은 따로없습니다
+```
 #### dcapi.read.post(gall_name,post_num)
 ```python
 # 게시글의 고유번호를 이용해 게시글의 정보를 가져옵니다
