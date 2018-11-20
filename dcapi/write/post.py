@@ -87,5 +87,5 @@ def main(gall_name,usid,password,title,content):
     
 
 #비로그인(유동) 상태에서 글을 작성할수있습니다.
-dcapi.write.post("programming","nick","password","subject","content")
+#dcapi.write.post("programming","nick","password","subject","content")
 #리턴값은 따로없습니다
