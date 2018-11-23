@@ -24,7 +24,7 @@ def getPageKey(gall_name):
     _hd ={
         "User-Agent" : "Mozilla/5.0 (Linux; Android 4.4.2; Nexus 4 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.114 Mobile Safari/537.36"
     }
-    url = "http://m.dcinside.com/write/ottang/"+gall_name
+    url = "http://m.dcinside.com/write/"+gall_name
     req = requests.get(url=url,headers=_hd)
     html = req.text
     soup = BeautifulSoup(html, 'lxml')
@@ -77,15 +77,21 @@ def write_post(gall_name,usid,password,title,content,rand_code,block_key,honey )
 
     _url = "http://upload.dcinside.com/write_new.php"
     req = requests.post(url=_url,headers=_hd,data=_payload)
+    pars1 = (req.text).split("/")
+    pars2 = pars1[5].split('"')
+    return pars2[0]
     
 
 def main(gall_name,usid,password,title,content):
     rand_code, csrf, honey = getPageKey(gall_name)
     block_key = getBlock_key(gall_name,csrf)
     check_filter(gall_name,id,title,content,csrf,rand_code)
-    write_post(gall_name,usid,password,title,content,rand_code,block_key,honey)
+    post_num = write_post(gall_name,usid,password,title,content,rand_code,block_key,honey)
+    return post_num
     
 
 #비로그인(유동) 상태에서 글을 작성할수있습니다.
-#dcapi.write.post("programming","nick","password","subject","content")
-#리턴값은 따로없습니다
+#post_num = dcapi.write.post("programming","nick","password","subject","content")
+#print(post_num)
+# -> 12345
+#성공시 작성한글의 글 번호가 리턴됩니다.

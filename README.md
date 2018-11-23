@@ -4,6 +4,7 @@
 ##### dcinside python3 전용 비공식 API 입니다.
 
 # 사용법
+###### 사용전 requests, beautifulsoup4, lxml 꼭 설치해주세요 
 ###### 프로젝트에 dcapi 폴더를 포함해준후 선언해줍니다.
 ```python
 import dcapi
@@ -12,8 +13,10 @@ import dcapi
 #### dcapi.write.post(gall_name,usid,password,title,content)
 ```python
 #비로그인(유동) 상태에서 글을 작성할수있습니다.
-dcapi.write.post("programming","nick","password","subject","content")
-#리턴값은 따로없습니다
+post_num = dcapi.write.post("programming","nick","password","subject","content")
+print(post_num)
+# -> 12345
+#성공할시 작성된 글의 글번호가 리턴됩니다
 ```
 #### dcapi.read.post(gall_name,post_num)
 ```python
