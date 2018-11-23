@@ -3,6 +3,14 @@ import requests
 from bs4 import BeautifulSoup
 
 
+#원하는 갤러리에 비로그인(유동)으로 글을 작성할수가 있습니다.
+#gall_namme : 갤러리 영문 이름
+#usid : 닉네임
+#password : 비밀번호
+#title : 글  제목
+#content : 글 내용
+
+
 def getBlock_key(gall_name,csrf):
     _hd = {
         "User-Agent" : "Mozilla/5.0 (Linux; Android 4.4.2; Nexus 4 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.114 Mobile Safari/537.36",
