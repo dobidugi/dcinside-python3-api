@@ -26,6 +26,7 @@ def getBlock_key(gall_name,csrf):
 
     req = requests.post(url=_url,headers=_hd,data=_payload)
     pars_key =  (req.text).split('"')
+
     return pars_key[5]
 
 def getPageKey(gall_name): 
@@ -57,13 +58,15 @@ def check_filter(gall_name,id,title,content,csrf,rand_code):
     }
     url = "http://m.dcinside.com/ajax/w_filter"
     req = requests.post(url=url,headers=_hd,data=_payload)
+  
     
 def write_post(gall_name,usid,password,title,content,rand_code,block_key,honey ):
     _hd = {
         "User-Agent" : "Mozilla/5.0 (Linux; Android 4.4.2; Nexus 4 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.114 Mobile Safari/537.36",
         "Referer" : "http://m.dcinside.com/write/"+gall_name,
         "X-Requested-With": "XMLHttpRequest",
-        "Origin": "http://m.dcinside.com"
+        "Origin": "http://m.dcinside.com",
+        "Cookie" : "m_dcinisde_"+gall_name+"="+gall_name+";m_dcinside_lately="+gall_name
     }
     _payload = {
         "name" : usid,
@@ -80,7 +83,9 @@ def write_post(gall_name,usid,password,title,content,rand_code,block_key,honey )
         "yData" : "",
         "tmp" : "",
         "mobile_key" : "mobile_nomember",
-        "code" : rand_code
+        "code" : rand_code,
+        "GEY3JWF" : honey
+
     }
 
     _url = "http://upload.dcinside.com/write_new.php"
@@ -103,3 +108,5 @@ def main(gall_name,usid,password,title,content):
 #print(post_num)
 # -> 12345
 #성공시 작성한글의 글 번호가 리턴됩니다.
+
+

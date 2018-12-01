@@ -1,4 +1,4 @@
-﻿# dcinside-python3api
+﻿﻿# dcinside-python3api
  # 아직 개발중
  
 ##### dcinside python3 전용 비공식 API 입니다.
@@ -17,6 +17,14 @@ post_num = dcapi.write.post("programming","nick","password","subject","content")
 print(post_num)
 # -> 12345
 #성공할시 작성된 글의 글번호가 리턴됩니다
+```
+#### dcapi.write.reply(gall_name,usid,password,title,content)
+```python
+#비로그인(유동) 상태에서 댓글을 달을수있습니다.
+result = dcapi.write.reply("programming","938896","nick","pass1234","test")
+print(result)
+# -> true
+#성공할시 true값이 리턴됩니다.
 ```
 #### dcapi.read.post(gall_name,post_num)
 ```python
