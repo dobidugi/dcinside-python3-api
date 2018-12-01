@@ -107,6 +107,6 @@ def main(gall_name,usid,password,title,content):
 #post_num = dcapi.write.post("programming","nick","password","subject","content")
 #print(post_num)
 # -> 12345
-#성공시 작성한글의 글 번호가 리턴됩니다.
+#성공시 작성한글의 글 번호가 리턴됩니다. 
 
 

@@ -84,4 +84,4 @@ def main(gall_name,post_num,usid,password,reply):
 #result = dcapi.write.reply("programming","938896","nick","pass1234","test")
 #print(result)
 # -> true
-#성공할시 true값이 리턴됩니다.
+#성공할시 true값이 리턴됩니다. 
