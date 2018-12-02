@@ -16,7 +16,7 @@ import dcapi
 post_num = dcapi.write.post("programming","nick","password","subject","content")
 print(post_num)
 # -> 12345
-#성공할시 작성된 글의 글번호가 리턴됩니다
+#성공할시 작성된 글의 글번호가 리턴됩니다.
 ```
 #### dcapi.write.reply(gall_name,usid,password,title,content)
 ```python
@@ -28,7 +28,7 @@ print(result)
 ```
 #### dcapi.read.post(gall_name,post_num)
 ```python
-# 게시글의 고유번호를 이용해 게시글의 정보를 가져옵니다
+# 게시글의 고유번호를 이용해 게시글의 정보를 가져옵니다.
 data = dcapi.read.post("programming","930329")
 print(data)
 # -> {'post_num': '930329', 'title': '제목입니다', 'writer': '닉네임', 'time': '2018-11-16 21:28:46', 'ip': '(218.153)', 'view_num': '44', 'comment_num': '0', 'up': '1', 'down': '2', 'gonic_up': '0', 'content': '내용이고요 '}
@@ -37,16 +37,41 @@ print(data['post_num'],data['title'],data['content']) # 게시글의 원하는 �
 ```
 #### dcapi.read.reply(gall_name,post_num)
 ```python
-# 해당글의 댓글들을 가져옵니다. (인덱스는 0번부터 시작합니다)
+# 해당글의 댓글들을 가져옵니다. (인덱스는 0번부터 시작합니다.)
 #data = dcapi.read.reply("programming","931271")
 print(data)
 # => {0: ['ㅇㅇ(121.134)', 'for문 두개로 해결하고 싶은거야?'], 1: ['ㅇㅇ(121.134)', 'list에 들어가는 순서는 어떻게 하고싶은거야?'], 2: ['ㅇㅇ(121.134)', 'm = len(mat)if m == 0:코드끝n = len(mat[0])if k > min(m,n):코드 끝우선 인풋 정합성 확인'], 3: ['ㅇㅇ(175.211)', 'list에 들어가는 순서 상관 없음. for문
 # while문 몇개를 쓰던 상관없음'], 4: ['ㅇㅇ(175.211)', '아니 저렇게 간단하게 끝난다고?!']}
 print(data[0]) 
-# 0번째 댓글의 정보들을 가져옵니다
+# 0번째 댓글의 정보들을 가져옵니다.
 # =>['ㅇㅇ(121.134)', 'for문 두개로 해결하고 싶은거야?']
 print(data[0][0])
-# => ㅇㅇ(121.134) 0번째의 작성자 정보만 가져옵니다
+# => ㅇㅇ(121.134) 0번째의 작성자 정보만 가져옵니다.
+```
+
+#### dcapi.vote.up(gall_name,post_num)
+```python
+# 해당글을 추천합니다.
+res = dcapi.vote.up("programming","12345")
+print(res)
+# -> true
+# 성공시 true값을 반환합니다.
+```
+#### dcapi.vote.down(gall_name,post_num)
+```python
+# 해당글을 비추천합니다.
+res = dcapi.vote.up("programming","12345")
+print(res)
+# -> true
+# 성공시 true값을 반환합니다.
+```
+#### dcapi.vote.hit(gall_name,post_num)
+```python
+# 해당글을 힛추(힛갤추천)합니다.
+res = dcapi.vote.up("programming","12345")
+print(res)
+# -> true
+# 성공시 true값을 반환합니다. 
 ```
 
 #### dcapi.read.title(gall_name,start_page,end_page)
@@ -55,7 +80,7 @@ print(data[0][0])
 data = dcapi.read.title("programming")
 print(data)
 # -> {1: ['첫번째글제목'],['두번째글제목'], ... }
-# 페이지 구간을 적어줄수있습니다
+# 페이지 구간을 적어줄수있습니다.
 data = dcapi.read.title("programming",1,5) # 1페이지부터 5페이지까지 제목들을 가져오기
 print(data)
 # -> {1: ['첫번째글제목'],['두번째글제목'], ... ,2 : ['첫번째글제목'],['두번째글제목'], ... }
