@@ -1,5 +1,5 @@
 ﻿﻿# dcinside-python3api
- 
+
 ##### dcinside python3 전용 비공식 API 입니다.
 
 # 사용법
@@ -32,6 +32,14 @@ result = dcapi.delete.post("programming","99999","1234a")
 print(result)
 # -> true
 #글삭제를 성공할시 true값이 리턴됩니다.
+```
+#### dcapi.delete.reply(gall_name,post_num,reply_num,password)
+```python
+#비로그인(유동) 댓글을 삭제할수있습니다.
+result = dcapi.delete.reply("programming","993951","3809972","1234")
+print(result)
+# -> true
+# 글삭제 성공시 true 실패시 false값이 리턴됩니다.
 ```
 #### dcapi.read.post(gall_name,post_num)
 ```python
