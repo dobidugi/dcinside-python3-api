@@ -9,7 +9,7 @@ def reqRecommend(gall_name,post_num,csrf):
     url = "http://m.dcinside.com/ajax/recommend"
     _hd = {
         "User-Agent" : "Mozilla/5.0 (Linux; Android 4.4.2; Nexus 4 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.114 Mobile Safari/537.36",
-        "Referer" : "http://m.dcinside.com/board/"+gall_name+"/"+post_num,
+        "Referer" : "http://m.dcinside.com/board/"+gall_name+"/"+str(post_num),
         "X-CSRF-TOKEN" : csrf,
         "X-Requested-With" : "XMLHttpRequest"
     }
@@ -31,7 +31,7 @@ def getKey(gall_name,post_num): # get csrf
         "Referer" : "http://m.dcinside.com/board/"+gall_name
     }
     
-    url = "http://m.dcinside.com/board/"+gall_name+"/"+post_num
+    url = "http://m.dcinside.com/board/"+gall_name+"/"+str(post_num)
     req = requests.get(url=url,headers=_hd)
     html = req.text
     soup = BeautifulSoup(html, 'lxml')

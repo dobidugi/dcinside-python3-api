@@ -51,14 +51,14 @@ def check_filter(gall_name,id,title,content,csrf,rand_code):
     }
 
     _payload = {
-       "subject" : title,
-       "memo" : content,
-       "id" : gall_name,
-       "rand_code" : rand_code,
+        "subject" : title,
+        "memo" : content,
+        "id" : gall_name,
+        "rand_code" : rand_code,
     }
     url = "http://m.dcinside.com/ajax/w_filter"
     req = requests.post(url=url,headers=_hd,data=_payload)
-  
+
     
 def write_post(gall_name,usid,password,title,content,rand_code,block_key,honey ):
     _hd = {

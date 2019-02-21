@@ -31,7 +31,7 @@ def pars_reply(req):
     soup = BeautifulSoup(html, 'lxml')
     nick = soup.find_all('li',{'class':'comment'})
     for i in range(0,count):
-       reply_list.append(nick[i].find('p',{'class':'txt'}).text)
+        reply_list.append(nick[i].find('p',{'class':'txt'}).text)
     return reply_list
 
 def _req(gall_name,post_num):
@@ -52,7 +52,7 @@ def _req(gall_name,post_num):
 
 
 def main(gall_name,post_num):
-     return _req(gall_name,post_num)
+    return _req(gall_name,post_num)
     
 # 해당글의 댓글들을 가져옵니다. (인덱스는 0번부터 시작합니다)
 #data = dcapi.read.reply("programming","931271")

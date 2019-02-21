@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
 
-from . import read, write, vote
+from . import read, write, vote, delete
 
-__all__ = [read,write,vote]
+__all__ = [read,write,vote,delete]
