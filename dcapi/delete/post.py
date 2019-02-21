@@ -58,12 +58,18 @@ def deletePost(gall_name,post_num,password,csrf,block_key):
     res = (req.text).split('"')
     res = res[2].split(':')
     res = res[1].split(",")
-    print(csrf)
-    print(block_key)
-    return req.text
+    return res[0]
 
 def main(gall_name,post_num,password):
     csrf = getCSRFtoken(gall_name,post_num)
     block_key = getBlockKey(gall_name,post_num,csrf)
     res = deletePost(gall_name,post_num,password,csrf,block_key)
     return res
+
+#### dcapi.delete.post(gall_name,post_num,password)
+#```python
+#비로그인(유동) 글을 삭제할수있습니다.
+#result = dcapi.delete.post("programming","99999","1234a")
+#print(result)
+# -> true
+#글삭제를 성공할시 true값이 리턴됩니다.

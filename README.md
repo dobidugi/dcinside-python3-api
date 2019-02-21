@@ -1,5 +1,4 @@
 ﻿﻿# dcinside-python3api
- # 아직 개발중
  
 ##### dcinside python3 전용 비공식 API 입니다.
 
@@ -25,6 +24,14 @@ result = dcapi.write.reply("programming","938896","nick","pass1234","test")
 print(result)
 # -> true
 #성공할시 true값이 리턴됩니다. 
+```
+#### dcapi.delete.post(gall_name,post_num,password)
+```python
+#비로그인(유동) 글을 삭제할수있습니다.
+result = dcapi.delete.post("programming","99999","1234a")
+print(result)
+# -> true
+#글삭제를 성공할시 true값이 리턴됩니다.
 ```
 #### dcapi.read.post(gall_name,post_num)
 ```python
